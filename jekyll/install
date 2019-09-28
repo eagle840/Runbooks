@@ -1,0 +1,31 @@
+echo 'are you in the right directory'
+# pause, there is no pause in linux, use
+read -rsp $'Press enter to continue...\n'
+
+apt install ruby
+
+gem install jekyll bundler
+bundle init
+echo 'gem "jekyll"'>> Gemfile
+bundle
+# error in above cmd
+
+cat <<EOF > index.html
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+  </body>
+</html>
+EOF
+
+
+
+jekyll build
+
+#jekyll serve
+#goto http://localhost:4000
